@@ -1,0 +1,531 @@
+
+
+%%% GENERAL SETTINGS
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[dutch]{babel}
+\usepackage[cm]{sfmath}
+
+\newlength\unit
+\setlength\unit{0.2mm}
+
+\usepackage{tikz,etoolbox}
+\tikzset{
+	every picture/.style={x=\unit,y=\unit,inner sep=0pt,line width=1pt}
+	}
+\pgfkeys{/pgf/number format/.cd,fixed,precision=0,use comma}
+
+
+%%% DEFAULT VALUES
+
+\def\frontviewheight{60}
+\def\afloopymboolheight{20}
+\def\breedtelijnheight{-60}
+\def\totalebreedtelijnheight{-20}
+\def\topviewheight{-80}
+\def\topviewlength{1300}
+\def\bordenheight{300}
+
+\def\naam{x}
+\def\xshift{0}
+
+
+
+
+
+%%% STRAAT OMGEVING
+\newenvironment{straat}{
+	\begin{tikzpicture}
+	\path (0,0)                  coordinate(startview)
+	     +(0,\topviewheight)     coordinate(starttopview)
+		 +(0,\frontviewheight)   coordinate(startfrontview)
+	     +(0,\breedtelijnheight) coordinate(startbreedtelijn)
+	     +(0,\totalebreedtelijnheight) coordinate(starttotalebreedtelijn)
+	     ;
+	}{
+	\path (current bounding box.center) +(900,0) +(-900,0);
+	\end{tikzpicture}
+	}
+	
+
+
+%%% BREEDTELIJN
+\def\breedtelijnprefix{}
+\def\totalebreedte{0}
+\pgfkeys{/breedtelijn/.cd
+        ,breedte/.code={\def\breedte{#1}}
+        ,prefix/.code={\def\breedtelijnprefix{#1}}
+        }
+\newcommand\breedtelijn[1]{{
+	\pgfkeys{/breedtelijn/.cd,#1}
+	\numgdef\totalebreedte{\totalebreedte + \breedte}
+	\draw[|-|] (startbreedtelijn) -- +(\breedte,0) node[pos=.5,anchor=south,font=\boldmath\Large,yshift=4\unit]
+		{$\breedtelijnprefix\pgfmathprintnumber\breedte$}
+		coordinate(startbreedtelijn);
+	}}
+	
+	
+%%% TOTALE BREEDTELIJN
+\def\totalebreedtelijnprefix{}
+\pgfkeys{/totalebreedtelijn/.cd
+        ,prefix/.code={\def\totalebreedtelijnprefix{#1}}
+        }
+\newcommand\totalebreedtelijn[1]{{
+	\pgfkeys{/totalebreedtelijn/.cd,#1}
+	\draw[|-|] (starttotalebreedtelijn) -- +(\totalebreedte,0) node[pos=.5,anchor=south,font=\boldmath\Large,yshift=4\unit]
+		{$\totalebreedtelijnprefix\pgfmathprintnumber\totalebreedte$}
+		;
+	}}	
+
+
+
+%%% AFLOOP SYMBOOL
+\pgfkeys{/afloop/.cd
+        ,element/.code={\def\element{#1}}
+        ,xshift/.code={\def\xshift{#1}}
+        }    
+\newcommand\aflooprechts[1]{
+	\pgfkeys{/afloop/.cd,#1}
+	\fill[black] (\element) ++(\xshift\unit,\afloopymboolheight) -- +(15,0) -- +(-15,9) -- +(-15,0) -- cycle;
+	\path (\element) ++(\xshift\unit,\afloopymboolheight) +(0,17) node[font=\boldmath]{$1,7\%$};
+	}
+\newcommand\aflooplinks[1]{
+	\pgfkeys{/afloop/.cd,#1}
+	\fill[black] (\element) ++(\xshift\unit,\afloopymboolheight) -- +(15,0) -- +(15,9) -- +(-15,0) -- cycle;
+	\path (\element) ++(\xshift\unit,\afloopymboolheight) +(0,17) node[font=\boldmath]{$1,7\%$};
+	}	
+
+	
+	
+	
+	
+
+
+
+%%% VOETPAD
+\colorlet{voetpad}{black!10!white!90!blue}
+\colorlet{voetpadlijn}{voetpad!50!black}
+\pgfkeys{/voetpad/.cd
+        ,breedte/.code={\def\breedte{#1}}
+        ,hoogtelinks/.code={\def\hoogtelinks{#1}}
+        ,hoogterechts/.code={\def\hoogterechts{#1}}
+        ,hoogte/.code={\def\hoogtelinks{#1}\def\hoogterechts{#1}}
+        ,naam/.code={\def\naam{#1}}
+        }
+\newcommand\voetpad[1]{{
+	\pgfkeys{/voetpad/.cd,#1}
+	\begin{scope}
+	\clip (starttopview) 	     coordinate(\naam-topview-north west) 
+		-- ++(\breedte,0)        coordinate(\naam-topview-north east) coordinate[pos=.5](\naam-topview-north) 
+		-- ++(0,-\topviewlength) coordinate(\naam-topview-south east) 
+		-- ++(-\breedte,0)       coordinate(\naam-topview-south west) coordinate[pos=.5](\naam-topview-south) 
+		-- cycle ;
+	\path (\naam-topview-north) -- (\naam-topview-south) node[pos=.5]{\includegraphics[page=1]{../files/texturen/voetpad}};
+	\draw[voetpadlijn] (\naam-topview-north west)--(\naam-topview-north east)
+	                  --(\naam-topview-south east)--(\naam-topview-south west)--cycle;
+	\end{scope}
+	\begin{scope}
+	\clip (startfrontview) 
+	        +(0,\hoogtelinks)  coordinate(\naam-frontview-north west) 
+		--  +(0,0)             coordinate(\naam-frontview-south west)  
+		-- ++(\breedte,0)      coordinate(\naam-frontview-south east) coordinate[pos=.5](\naam-frontview-south)
+		-- ++(0,\hoogterechts) coordinate(\naam-frontview-north east)  
+		-- cycle               coordinate[pos=.5](\naam-frontview-north) ;
+	\path (\naam-frontview-north) -- (\naam-frontview-south) node[pos=.5]{\includegraphics[page=2]{../files/texturen/voetpad}};
+	\draw[voetpadlijn] (\naam-frontview-north west)--(\naam-frontview-north east)
+	                  --(\naam-frontview-south east)--(\naam-frontview-south west)--cycle;
+	\end{scope}
+	\path (startview)      -- +(\breedte,0) coordinate(startview) coordinate[pos=.5](\naam) coordinate[pos=.5](c)
+		  (starttopview)   -- +(\breedte,0) coordinate(starttopview)
+	      (startfrontview) -- +(\breedte,0) coordinate(startfrontview);
+	\ifnumgreater{\hoogtelinks}{\hoogterechts}{\aflooprechts{element=\naam}}{}
+    \ifnumless{\hoogtelinks}{\hoogterechts}{\aflooplinks{element=\naam}}{}
+	}}
+
+
+%%% BORDUUR	
+\colorlet{borduur}{black!50}
+\colorlet{borduurlijn}{black}
+\pgfkeys{/borduur/.cd
+        ,breedte/.code={\def\breedte{#1}}
+        ,hoogte/.code={\def\hoogte{#1}}
+        ,naam/.code={\def\naam{#1}}
+        }
+\newcommand\borduur[1]{{
+	\pgfkeys{/borduur/.cd,#1}
+	\begin{scope}
+	\clip (starttopview) 	     coordinate(\naam-topview-north west) 
+		-- ++(\breedte,0)        coordinate(\naam-topview-north east) coordinate[pos=.5](\naam-topview-north) 
+		-- ++(0,-\topviewlength) coordinate(\naam-topview-south east) 
+		-- ++(-\breedte,0)       coordinate(\naam-topview-south west) coordinate[pos=.5](\naam-topview-south) 
+		-- cycle ;
+	\path (\naam-topview-north) -- (\naam-topview-south) node[pos=.5]{\includegraphics[page=1]{../files/texturen/borduur}};
+	\draw[borduurlijn] (\naam-topview-north west)--(\naam-topview-north east)
+	                  --(\naam-topview-south east)--(\naam-topview-south west)--cycle;
+	\end{scope}
+	\begin{scope}
+	\clip (startfrontview) 
+	        +(0,\hoogte)  coordinate(\naam-frontview-north west) 
+		--  +(0,0)        coordinate(\naam-frontview-south west)  
+		-- ++(\breedte,0) coordinate(\naam-frontview-south east) coordinate[pos=.5](\naam-frontview-south)
+		-- ++(0,\hoogte)  coordinate(\naam-frontview-north east)  
+		-- cycle          coordinate[pos=.5](\naam-frontview-north) ;
+	\path (\naam-frontview-north) -- (\naam-frontview-south) node[pos=.5]{\includegraphics[page=1]{../files/texturen/borduur}};
+	\draw[borduurlijn] (\naam-frontview-north west)--(\naam-frontview-north east)
+	                  --(\naam-frontview-south east)--(\naam-frontview-south west)--cycle;
+	\end{scope}
+	\path (startview)      -- +(\breedte,0) coordinate(startview) coordinate[pos=.5](\naam)
+		  (starttopview)   -- +(\breedte,0) coordinate(starttopview)
+	      (startfrontview) -- +(\breedte,0) coordinate(startfrontview);
+	}}
+
+
+
+
+
+
+%%% GOOT
+\colorlet{goot}{black!10}
+\colorlet{gootlijn}{goot!50!black}
+\pgfkeys{/goot/.cd
+        ,hoogte/.code={\def\hoogte{#1}}
+        ,naam/.code={\def\naam{#1}}
+        }
+\newcommand\goot[1]{{
+	\pgfkeys{/goot/.cd,#1}
+	\def\breedte{20}
+	\begin{scope}
+	\clip (starttopview) 	     coordinate(\naam-topview-north west) 
+		-- ++(\breedte,0)        coordinate(\naam-topview-north east) coordinate[pos=.5](\naam-topview-north) 
+		-- ++(0,-\topviewlength) coordinate(\naam-topview-south east) 
+		-- ++(-\breedte,0)       coordinate(\naam-topview-south west) coordinate[pos=.5](\naam-topview-south) 
+		-- cycle ;
+	\path (\naam-topview-north) node[anchor=north]{\includegraphics[page=1]{../files/texturen/goot}};
+	\draw[gootlijn] (\naam-topview-north west)--(\naam-topview-north east)
+	                  --(\naam-topview-south east)--(\naam-topview-south west)--cycle;
+	\end{scope}
+	\begin{scope}
+	\clip (startfrontview) 
+	        +(0,\hoogte)  coordinate(\naam-frontview-north west) 
+		--  +(0,0)        coordinate(\naam-frontview-south west)  
+		-- ++(\breedte,0) coordinate(\naam-frontview-south east) coordinate[pos=.5](\naam-frontview-south)
+		-- ++(0,\hoogte)  coordinate(\naam-frontview-north east)  
+		-- cycle          coordinate[pos=.5](\naam-frontview-north) ;
+	\path (\naam-frontview-north) -- (\naam-frontview-south) node[pos=.5]{\includegraphics[page=2]{../files/texturen/goot}};
+	\draw[gootlijn] (\naam-frontview-north west)--(\naam-frontview-north east)
+	                  --(\naam-frontview-south east)--(\naam-frontview-south west)--cycle;
+	\end{scope}
+	\path (startview)      -- +(\breedte,0) coordinate(startview) coordinate[pos=.5](\naam)
+		  (starttopview)   -- +(\breedte,0) coordinate(starttopview)
+	      (startfrontview) -- +(\breedte,0) coordinate(startfrontview);
+	}}
+
+
+
+	
+
+
+
+
+
+
+
+%%% FIETSPAD STEEN
+\definecolor{stenenfietspad}{HTML}{956360}
+\colorlet{stenenfietspadlijn}{stenenfietspad!50!black}
+\pgfkeys{/stenenfietspad/.cd
+        ,breedte/.code={\def\breedte{#1}}
+        ,hoogtelinks/.code={\def\hoogtelinks{#1}}
+        ,hoogterechts/.code={\def\hoogterechts{#1}}
+        ,hoogte/.code={\def\hoogtelinks{#1}\def\hoogterechts{#1}}
+        ,naam/.code={\def\naam{#1}}
+        }
+\newcommand\stenenfietspad[1]{{
+	\pgfkeys{/stenenfietspad/.cd,#1}
+	\begin{scope}
+	\clip (starttopview) 	     coordinate(\naam-topview-north west) 
+		-- ++(\breedte,0)        coordinate(\naam-topview-north east) coordinate[pos=.5](\naam-topview-north) 
+		-- ++(0,-\topviewlength) coordinate(\naam-topview-south east) 
+		-- ++(-\breedte,0)       coordinate(\naam-topview-south west) coordinate[pos=.5](\naam-topview-south) 
+		-- cycle ;
+	\path (\naam-topview-north) -- (\naam-topview-south) node[pos=.5]{\includegraphics[page=1]{../files/texturen/stenenfietspad}};
+	\draw[stenenfietspadlijn] (\naam-topview-north west)--(\naam-topview-north east)
+	                  --(\naam-topview-south east)--(\naam-topview-south west)--cycle;
+	\end{scope}
+	\begin{scope}
+	\clip (startfrontview) 
+	        +(0,\hoogtelinks)  coordinate(\naam-frontview-north west) 
+		--  +(0,0)             coordinate(\naam-frontview-south west)  
+		-- ++(\breedte,0)      coordinate(\naam-frontview-south east) coordinate[pos=.5](\naam-frontview-south)
+		-- ++(0,\hoogterechts) coordinate(\naam-frontview-north east)  
+		-- cycle               coordinate[pos=.5](\naam-frontview-north) ;
+	\path (\naam-frontview-north) -- (\naam-frontview-south) node[pos=.5]{\includegraphics[page=2]{../files/texturen/stenenfietspad}};
+	\draw[stenenfietspadlijn] (\naam-frontview-north west)--(\naam-frontview-north east)
+	                  --(\naam-frontview-south east)--(\naam-frontview-south west)--cycle;
+	\end{scope}
+	\path (startview)      -- +(\breedte,0) coordinate(startview) coordinate[pos=.5](\naam)
+		  (starttopview)   -- +(\breedte,0) coordinate(starttopview)
+	      (startfrontview) -- +(\breedte,0) coordinate(startfrontview);
+    \ifnumgreater{\hoogtelinks}{\hoogterechts}{\aflooprechts{element=\naam}}{}
+    \ifnumless{\hoogtelinks}{\hoogterechts}{\aflooplinks{element=\naam}}{}
+	}}
+
+
+
+
+
+%%% FIETSPAD ASFALT
+\definecolor{asfaltfietspad}{HTML}{781f19}
+\colorlet{asfaltfietspadlijn}{asfaltfietspad!90!black}
+\pgfkeys{/asfaltfietspad/.cd
+        ,breedte/.code={\def\breedte{#1}}
+        ,hoogtelinks/.code={\def\hoogtelinks{#1}}
+        ,hoogterechts/.code={\def\hoogterechts{#1}}
+        ,hoogte/.code={\def\hoogtelinks{#1}\def\hoogterechts{#1}}
+        ,naam/.code={\def\naam{#1}}
+        }
+\newcommand\asfaltfietspad[1]{{
+	\pgfkeys{/asfaltfietspad/.cd,#1}
+	\begin{scope}
+	\clip (starttopview) 	     coordinate(\naam-topview-north west) 
+		-- ++(\breedte,0)        coordinate(\naam-topview-north east) coordinate[pos=.5](\naam-topview-north) 
+		-- ++(0,-\topviewlength) coordinate(\naam-topview-south east) 
+		-- ++(-\breedte,0)       coordinate(\naam-topview-south west) coordinate[pos=.5](\naam-topview-south) 
+		-- cycle ;
+	\path (\naam-topview-north) -- (\naam-topview-south) node[pos=.5]{\includegraphics[page=1]{../files/texturen/asfaltfietspad}};
+	\draw[asfaltfietspadlijn] (\naam-topview-north west)--(\naam-topview-north east)
+	                  --(\naam-topview-south east)--(\naam-topview-south west)--cycle;
+	\end{scope}
+	\begin{scope}
+	\clip (startfrontview) 
+	        +(0,\hoogtelinks)  coordinate(\naam-frontview-north west) 
+		--  +(0,0)             coordinate(\naam-frontview-south west)  
+		-- ++(\breedte,0)      coordinate(\naam-frontview-south east) coordinate[pos=.5](\naam-frontview-south)
+		-- ++(0,\hoogterechts) coordinate(\naam-frontview-north east)  
+		-- cycle               coordinate[pos=.5](\naam-frontview-north) ;
+	\path (\naam-frontview-north) -- (\naam-frontview-south) node[pos=.5]{\includegraphics[page=2]{../files/texturen/asfaltfietspad}};
+	\draw[asfaltfietspadlijn] (\naam-frontview-north west)--(\naam-frontview-north east)
+	                  --(\naam-frontview-south east)--(\naam-frontview-south west)--cycle;
+	\end{scope}
+	\path (startview)      -- +(\breedte,0) coordinate(startview) coordinate[pos=.5](\naam)
+		  (starttopview)   -- +(\breedte,0) coordinate(starttopview)
+	      (startfrontview) -- +(\breedte,0) coordinate(startfrontview);
+    \ifnumgreater{\hoogtelinks}{\hoogterechts}{\aflooprechts{element=\naam}}{}
+    \ifnumless{\hoogtelinks}{\hoogterechts}{\aflooplinks{element=\naam}}{}
+	}}
+
+
+
+
+
+
+%%% WEG ASFALT
+\colorlet{asfaltweg}{black!30}
+\colorlet{asfaltweglijn}{asfaltweg!95!black}
+\pgfkeys{/asfaltweg/.cd
+        ,breedte/.code={\def\breedte{#1}}
+        ,hoogtelinks/.code={\def\hoogtelinks{#1}}
+        ,hoogterechts/.code={\def\hoogterechts{#1}}
+        ,hoogte/.code={\def\hoogtelinks{#1}\def\hoogterechts{#1}}
+        ,naam/.code={\def\naam{#1}}
+        }
+\newcommand\asfaltweg[1]{{
+	\pgfkeys{/asfaltweg/.cd,#1}
+	\begin{scope}
+	\clip (starttopview) 	     coordinate(\naam-topview-north west) 
+		-- ++(\breedte,0)        coordinate(\naam-topview-north east) coordinate[pos=.5](\naam-topview-north) 
+		-- ++(0,-\topviewlength) coordinate(\naam-topview-south east) 
+		-- ++(-\breedte,0)       coordinate(\naam-topview-south west) coordinate[pos=.5](\naam-topview-south) 
+		-- cycle ;
+	\path (\naam-topview-north) -- (\naam-topview-south) node[pos=.5]{\includegraphics[page=1]{../files/texturen/asfaltweg}};
+	\draw[asfaltweglijn] (\naam-topview-north west)--(\naam-topview-north east)
+	                  --(\naam-topview-south east)--(\naam-topview-south west)--cycle;
+	\end{scope}
+	\begin{scope}
+	\clip (startfrontview) 
+	        +(0,\hoogtelinks)  coordinate(\naam-frontview-north west) 
+		--  +(0,0)             coordinate(\naam-frontview-south west)  
+		-- ++(\breedte,0)      coordinate(\naam-frontview-south east) coordinate[pos=.5](\naam-frontview-south)
+		-- ++(0,\hoogterechts) coordinate(\naam-frontview-north east)  
+		-- cycle               coordinate[pos=.5](\naam-frontview-north) ;
+	\path (\naam-frontview-north) -- (\naam-frontview-south) node[pos=.5]{\includegraphics[page=2]{../files/texturen/asfaltweg}};
+	\draw[asfaltweglijn] (\naam-frontview-north west)--(\naam-frontview-north east)
+	                  --(\naam-frontview-south east)--(\naam-frontview-south west)--cycle;
+	\end{scope}
+	\path (startview)      -- +(\breedte,0) coordinate(startview) coordinate[pos=.5](\naam)
+		  (starttopview)   -- +(\breedte,0) coordinate(starttopview)
+	      (startfrontview) -- +(\breedte,0) coordinate(startfrontview);
+	\ifnumgreater{\hoogtelinks}{\hoogterechts}{\aflooprechts{element=\naam}}{}
+    \ifnumless{\hoogtelinks}{\hoogterechts}{\aflooplinks{element=\naam}}{}
+	}}
+
+
+
+
+
+	
+	
+%%% PARKEERSTROOK
+\colorlet{parkeerstrook}{black!30}
+\colorlet{parkeerstrooklijn}{parkeerstrook!50!black}
+\pgfkeys{/parkeerstrook/.cd
+        ,breedte/.code={\def\breedte{#1}}
+        ,hoogtelinks/.code={\def\hoogtelinks{#1}}
+        ,hoogterechts/.code={\def\hoogterechts{#1}}
+        ,hoogte/.code={\def\hoogtelinks{#1}\def\hoogterechts{#1}}
+        ,naam/.code={\def\naam{#1}}
+        }
+\newcommand\parkeerstrook[1]{{
+	\pgfkeys{/parkeerstrook/.cd,#1}
+	\begin{scope}
+	\clip (starttopview) 	     coordinate(\naam-topview-north west) 
+		-- ++(\breedte,0)        coordinate(\naam-topview-north east) coordinate[pos=.5](\naam-topview-north) 
+		-- ++(0,-\topviewlength) coordinate(\naam-topview-south east) 
+		-- ++(-\breedte,0)       coordinate(\naam-topview-south west) coordinate[pos=.5](\naam-topview-south) 
+		-- cycle ;
+	\path (\naam-topview-north) -- (\naam-topview-south) node[pos=.5]{\includegraphics[page=1]{../files/texturen/parkeerstrook}};
+	\path (\naam-topview-north) -- (\naam-topview-south) node[pos=.2]{\includegraphics[page=1]{../files/texturen/plantenbak}};                               
+	\draw[parkeerstrooklijn] (\naam-topview-north west)--(\naam-topview-north east)
+	                  --(\naam-topview-south east)--(\naam-topview-south west)--cycle;     
+	\end{scope}
+	\path (startfrontview) 
+	        +(0,\hoogtelinks)  coordinate(\naam-frontview-north west) 
+		--  +(0,0)             coordinate(\naam-frontview-south west)  
+		-- ++(\breedte,0)      coordinate(\naam-frontview-south east) coordinate[pos=.5](\naam-frontview-south)
+		-- ++(0,\hoogterechts) coordinate(\naam-frontview-north east)  
+		-- cycle               coordinate[pos=.5](\naam-frontview-north) ;
+	\path (\naam-frontview-south) node[anchor=south]{\includegraphics[page=2]{../files/texturen/plantenbak}};
+	\begin{scope}
+	\clip[postaction={fill=parkeerstrooklijn}] (startfrontview) 
+	       (\naam-frontview-north west) 
+		-- (\naam-frontview-south west)  
+		-- (\naam-frontview-south east) 
+		-- (\naam-frontview-north east)  
+		-- cycle               ;
+	\path (\naam-frontview-north) node[anchor=north]{\includegraphics[page=2]{../files/texturen/parkeerstrook}};
+	\draw[parkeerstrooklijn] (\naam-frontview-north west)--(\naam-frontview-north east)
+	                  --(\naam-frontview-south east)--(\naam-frontview-south west)--cycle;
+	\end{scope}	
+		
+	
+	\path (startview)      -- +(\breedte,0) coordinate(startview) coordinate[pos=.5](\naam)
+		  (starttopview)   -- +(\breedte,0) coordinate(starttopview)
+	      (startfrontview) -- +(\breedte,0) coordinate(startfrontview);
+	\ifnumgreater{\hoogtelinks}{\hoogterechts}{\aflooprechts{element=\naam}}{}
+    \ifnumless{\hoogtelinks}{\hoogterechts}{\aflooplinks{element=\naam}}{}
+	}}
+
+
+%%% GROEN
+\definecolor{groen}{HTML}{93c04a}
+\colorlet{groenlijn}{groen!50!black}
+\pgfkeys{/groen/.cd
+        ,breedte/.code={\def\breedte{#1}}
+        ,hoogte/.code={\def\hoogte{#1}}
+        }
+\newcommand\groen[1]{{
+	\pgfkeys{/groen/.cd,#1}
+	\begin{scope}
+	\clip (starttopview) 	     coordinate(\naam-topview-north west) 
+		-- ++(\breedte,0)        coordinate(\naam-topview-north east) coordinate[pos=.5](\naam-topview-north) 
+		-- ++(0,-\topviewlength) coordinate(\naam-topview-south east) 
+		-- ++(-\breedte,0)       coordinate(\naam-topview-south west) coordinate[pos=.5](\naam-topview-south) 
+		-- cycle ;
+	\path (\naam-topview-north) -- (\naam-topview-south) node[pos=.5]{\includegraphics[page=1]{../files/texturen/groen}};
+	\end{scope}
+	\begin{scope}
+	\clip (startfrontview) 
+	        +(0,\hoogte)  coordinate(\naam-frontview-north west) 
+		--  +(0,0)        coordinate(\naam-frontview-south west)  
+		-- ++(\breedte,0) coordinate(\naam-frontview-south east) coordinate[pos=.5](\naam-frontview-south)
+		-- ++(0,\hoogte)  coordinate(\naam-frontview-north east)  
+		-- cycle          coordinate[pos=.5](\naam-frontview-north) ;
+	\path (\naam-frontview-north) node[anchor=north]{\includegraphics[page=1]{../files/texturen/groen}};
+	\end{scope}
+	\path (startview)      -- +(\breedte,0) coordinate(startview) coordinate[pos=.5](\naam)
+		  (starttopview)   -- +(\breedte,0) coordinate(starttopview)
+	      (startfrontview) -- +(\breedte,0) coordinate(startfrontview);
+	}}
+	
+	
+	
+	
+	
+
+
+
+	
+	
+	
+	
+	
+%%% PICS VOERTUIGEN	
+\newcommand\voertuigscale{.37}
+\csdef{totaalvoetganger}{14}
+\csdef{totaalfietser}{4}
+\csdef{totaalauto}{5}
+\def\gbrpos{.5}
+\def\gbrrichting{achter}
+\foreach \gebruiker in {voetganger,fietser,auto}{
+	\letcs\tot{totaal\gebruiker}
+	\foreach \x in {1,...,\tot}{
+		\csxdef{\gebruiker\x}{\gebruiker\x}
+		}
+	\foreach \x in {1,...,\tot}{
+		\pgfmathrandominteger\r{1}{\tot}
+		\letcs\swap{\gebruiker\r}
+    	\global\csletcs{\gebruiker\r}{\gebruiker\x}  
+    	\global\cslet{\gebruiker\x}{\swap}	
+		}
+	}
+\newcounter{voetganger}
+\newcounter{fietser}
+\newcounter{auto}
+\pgfkeys{/gbr/.cd
+        ,element/.code={\def\gbrelement{#1}}
+        ,type/.code={\ifstrequal{#1}{parkauto}{\def\gbrtype{auto}\def\gbrpark{park}}{\def\gbrtype{#1}\def\gbrpark{}}}
+        ,pos/.code={\def\gbrpos{#1}}
+        ,xshift/.code={\def\xshift{#1}}
+        ,richting/.code={\edef\gbrrichting{#1}}
+        }
+\newcommand\gebruiker[1]{{
+	\pgfkeys{/gbr/.cd,#1}
+	\stepcounter{\gbrtype}
+	\edef\tmp{voor}
+	\edef\angle{\ifdefequal{\gbrrichting}{\tmp}{180}{0}}
+	\edef\frontback{\ifdefequal{\gbrrichting}{\tmp}{front}{back}}
+	\path 	
+	(\gbrelement-frontview-north) node[anchor=south,xshift=\xshift\unit]{
+		\includegraphics[scale=\voertuigscale]{../files/voertuigen/\gbrpark\csuse{\gbrtype\arabic{\gbrtype}}_\frontback}
+		}
+    (\gbrelement-topview-north) -- (\gbrelement-topview-south) node[pos=\gbrpos,xshift=\xshift\unit]{
+    	\includegraphics[scale=\voertuigscale,angle=\angle]{../files/voertuigen/\gbrpark\csuse{\gbrtype\arabic{\gbrtype}}_top}
+    	}
+    ;	
+	}}
+
+
+
+
+%%%% BORDEN
+\def\bordenscale{.4}
+\def\bordenxshift{0}
+\pgfkeys{/borden/.cd
+        ,element/.code={\def\bordenelement{#1}}
+        ,inhoud/.code={\def\bordeninhoud{#1}}
+        ,xshift/.code={\def\bordenxshift{#1}}
+        }
+\newcommand\borden[1]{{
+	\pgfkeys{/borden/.cd,#1}
+	\path (\bordenelement) ++(0,\bordenheight) node[anchor=south,xshift=\bordenxshift\unit,align=center]{\bordeninhoud};
+	}}
+\def\bordtien{\includegraphics[scale=\bordenscale]{../files/borden/C43_10}}	
+\def\borddertig{\includegraphics[scale=\bordenscale]{../files/borden/C43_30}}	
+\def\bordvijftig{\includegraphics[scale=\bordenscale]{../files/borden/C43_50}}	
+\def\bordzeventig{\includegraphics[scale=\bordenscale]{../files/borden/C43_70}}	
+\def\bordvoetgangers{\includegraphics[scale=\bordenscale]{../files/borden/D11}}
+\def\bordfietsers{\includegraphics[scale=\bordenscale]{../files/borden/D7}}
+\def\bordBPverboden{\includegraphics[scale=\bordenscale]{../files/borden/M16NL}}
+\def\bordparking{\includegraphics[scale=.25]{../files/borden/E9a}}
+\def\bordverboden{\includegraphics[scale=\bordenscale]{../files/borden/C3}}
+\def\borduitgezonderdfietsers{\includegraphics[scale=\bordenscale]{../files/borden/M2NL}}
+\def\bordautoweg{\includegraphics[scale=\bordenscale]{../files/borden/F9}}

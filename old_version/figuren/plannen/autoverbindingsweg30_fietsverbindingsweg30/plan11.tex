@@ -1,0 +1,52 @@
+\documentclass{standalone}
+\input{../files/code.tex}
+
+
+
+
+
+
+\begin{document}
+
+
+
+
+
+\begin{straat}
+\breedtelijn{breedte=180,prefix=\geq}
+	\voetpad{breedte=170,hoogtelinks=36,hoogterechts=34,naam=vpl}
+	\borduur{breedte=10,hoogte=34}
+	\gebruiker{element=vpl,type=voetganger,pos=0.6,richting=achter}
+	\borden{element=vpl,inhoud=\bordvoetgangers}
+\breedtelijn{breedte=200}
+	\asfaltfietspad{breedte=180,hoogtelinks=32,hoogterechts=30,naam=fpl}
+	\borduur{breedte=20,hoogte=30}
+	\gebruiker{element=fpl,type=fietser,pos=0.4,richting=voor}
+	\borden{element=fpl,inhoud=\borddertig\\\bordfietsers\\\bordBPverboden}
+\breedtelijn{breedte=450}	
+	\goot{hoogte=20}
+	\asfaltweg{breedte=205,hoogtelinks=22,hoogterechts=25,naam=wegl} 
+	\asfaltweg{breedte=205,hoogtelinks=25,hoogterechts=22,naam=wegr}
+	\goot{hoogte=20}
+	\draw[white,line width=15\unit,dash=on 125\unit off 125\unit phase 0pt] (wegl-topview-north west) ++(100,0) -- +(0,-\topviewlength) ;
+	\draw[white,line width=15\unit,dash=on 125\unit off 125\unit phase 0pt] (wegr-topview-north east) ++(-100,0) -- +(0,-\topviewlength) ;
+	\gebruiker{element=wegr,type=auto,pos=0.30,richting=achter}
+	\gebruiker{element=wegl,type=auto,pos=0.75,richting=voor}	
+	\borden{element=wegl,inhoud=\borddertig}	
+	\borden{element=wegr,inhoud=\borddertig}	
+\breedtelijn{breedte=200}
+	\borduur{breedte=20,hoogte=30}
+	\asfaltfietspad{breedte=180,hoogtelinks=30,hoogterechts=32,naam=fpr}
+	\gebruiker{element=fpr,type=fietser,pos=0.8,richting=achter}	
+	\borden{element=fpr,inhoud=\borddertig\\\bordfietsers\\\bordBPverboden}
+\breedtelijn{breedte=180,prefix=\geq}	
+	\borduur{breedte=10,hoogte=34}
+	\voetpad{breedte=170,hoogtelinks=34,hoogterechts=36,naam=vpr}
+	\gebruiker{element=vpr,type=voetganger,pos=0.2,richting=voor}
+	\borden{element=vpr,inhoud=\bordvoetgangers}
+\end{straat}
+
+
+
+
+\end{document}

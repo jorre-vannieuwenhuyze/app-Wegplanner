@@ -1,0 +1,38 @@
+\documentclass{standalone}
+\input{../files/code.tex}
+
+
+
+
+
+
+\begin{document}
+
+
+\def\topviewlength{4000}
+
+
+\begin{straat}
+
+\groen{breedte=50,hoogte=30}
+\borduur{breedte=20,hoogte=30}
+\path (startbreedtelijn) -- +(70,0) coordinate(startbreedtelijn);
+\breedtelijn{breedte=600}	
+	\goot{hoogte=20}
+	\asfaltweg{breedte=280,hoogtelinks=22,hoogterechts=25,naam=wegl} 
+	\asfaltweg{breedte=280,hoogtelinks=25,hoogterechts=22,naam=wegr}
+	\goot{hoogte=20}
+	\draw[white,line width=15\unit] (wegl-topview-north west) ++(20,0) -- +(0,-\topviewlength) ;
+	\draw[white,line width=15\unit,dash=on 250\unit off 1000\unit phase 0pt] (wegl-topview-north east) -- +(0,-\topviewlength) ;
+	\draw[white,line width=15\unit] (wegr-topview-north east) ++(-20,0) -- +(0,-\topviewlength) ;
+	\gebruiker{element=wegr,type=auto,pos=0.30,richting=achter}
+	\gebruiker{element=wegl,type=auto,pos=0.75,richting=voor}	
+	\borden{element=wegl,inhoud=\bordautoweg\\\bordzeventig,xshift=130}	
+\borduur{breedte=20,hoogte=30}
+\groen{breedte=50,hoogte=30}
+\end{straat}
+
+
+
+
+\end{document}

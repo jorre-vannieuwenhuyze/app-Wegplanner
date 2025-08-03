@@ -1,0 +1,62 @@
+\documentclass{standalone}
+\input{../files/code.tex}
+
+
+
+
+
+
+\begin{document}
+
+
+
+
+
+\begin{straat}
+\breedtelijn{breedte=180,prefix=\geq}
+	\voetpad{breedte=170,hoogtelinks=38,hoogterechts=36,naam=vpl}
+	\borduur{breedte=10,hoogte=36}
+	\gebruiker{element=vpl,type=voetganger,pos=0.6,richting=achter}
+	\borden{element=vpl,inhoud=\bordvoetgangers}
+\breedtelijn{breedte=250}
+	\asfaltfietspad{breedte=250,hoogtelinks=34,hoogterechts=32,naam=fpl}
+	\draw[white,line width=10\unit] (fpl-topview-north west) ++(15\unit,0) -- +(0,-\topviewlength) ;
+	\draw[white,line width=10\unit] (fpl-topview-north east) ++(-15\unit,0) -- +(0,-\topviewlength) ;
+	\gebruiker{element=fpl,type=fietser,pos=0.4,xshift=-50,richting=voor}
+	\borden{element=fpl,inhoud=\bordvijftig\\\bordfietsers}
+\breedtelijn{breedte=50}
+	\borduur{breedte=10,hoogte=32}
+	\voetpad{breedte=20,hoogte=32}
+	\borduur{breedte=20,hoogte=32}
+\breedtelijn{breedte=490}	
+	\goot{hoogte=20}
+	\asfaltweg{breedte=225,hoogtelinks=22,hoogterechts=25,naam=wegl} 
+	\asfaltweg{breedte=225,hoogtelinks=25,hoogterechts=22,naam=wegr}
+	\goot{hoogte=20}
+	\gebruiker{element=wegr,type=auto,pos=0.30,richting=achter}
+	\gebruiker{element=wegl,type=auto,pos=0.75,richting=voor}	
+	\borden{element=wegl,inhoud=\bordvijftig}	
+	\borden{element=wegr,inhoud=\bordvijftig}	
+\breedtelijn{breedte=50}
+	\borduur{breedte=20,hoogte=32}
+	\voetpad{breedte=20,hoogte=32}
+	\borduur{breedte=10,hoogte=32}
+\breedtelijn{breedte=250}
+	\asfaltfietspad{breedte=250,hoogtelinks=32,hoogterechts=34,naam=fpr}
+	\draw[white,line width=10\unit] (fpr-topview-north west) ++(15\unit,0) -- +(0,-\topviewlength) ;
+	\draw[white,line width=10\unit] (fpr-topview-north east) ++(-15\unit,0) -- +(0,-\topviewlength) ;
+	\gebruiker{element=fpr,type=fietser,pos=0.5,xshift=-50,richting=achter}
+	\gebruiker{element=fpr,type=fietser,pos=0.8,xshift=50,richting=achter}	
+	\borden{element=fpr,inhoud=\bordvijftig\\\bordfietsers}
+\breedtelijn{breedte=180,prefix=\geq}	
+	\borduur{breedte=10,hoogte=36}
+	\voetpad{breedte=170,hoogtelinks=36,hoogterechts=38,naam=vpr}
+	\gebruiker{element=vpr,type=voetganger,pos=0.2,richting=voor}
+	\borden{element=vpr,inhoud=\bordvoetgangers}
+\totalebreedtelijn{prefix=\geq}	
+\end{straat}
+
+
+
+
+\end{document}

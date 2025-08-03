@@ -1,0 +1,64 @@
+\documentclass{article}
+\input{../code.tex} 
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment[{[]}]{tikzpicture}
+
+
+
+
+
+\begin{document}
+
+\def\width{600}
+\def\depth{2000}
+\def\height{40}
+
+
+\begin{tikzpicture}
+\tikzset{voetpadtexture/.pic={
+	\draw[voetpadlijn,fill=voetpad] (0,0) rectangle (60,20);
+	\draw[voetpadlijn,fill=voetpad] (30,20) rectangle (90,40);  
+	}}
+\clip (0,0)	rectangle (\width,\depth);
+\foreach \x in {-60,0,60,...,\width}{
+\foreach \y in {0,40,...,\depth}{
+	\path (\x,\y) pic{voetpadtexture};
+	}};		
+\end{tikzpicture}
+
+
+\begin{tikzpicture}
+\clip (0,0)	rectangle (\width,\height);
+\foreach \x in {0,60,...,\width}{ 
+	\draw[voetpadlijn,fill=voetpad] (\x,0) rectangle +(60,\height);	
+	}
+\end{tikzpicture}	
+
+
+\end{document}
+
+
+
+
+
+
+
+%\begin{tikzpicture}	
+%\tikzset{voetpadtexture/.pic={
+%	\draw[voetpadlijn,fill=voetpad] (0,0) -- (14,14) -- (21,7) -- (7,-7) -- cycle;
+%	\draw[voetpadlijn,fill=voetpad] (7,7) -- (14,14) -- (0,28) -- (-7,21) -- cycle;  
+%	}}
+%\clip (0,0)	rectangle (\width,\depth);
+%\foreach \x in {-14,0,14,...,\width}{
+%\foreach \y in {-28,0,28,...,\depth}{
+%	\path (\x,\y) pic{voetpadtexture};
+%	}};		
+%\end{tikzpicture}
+%
+%
+%\begin{tikzpicture}
+%\clip (0,0)	rectangle (\width,\height);
+%\foreach \x in {0,14,...,\width}{ 
+%	\draw[voetpadlijn,fill=voetpad] (\x,0) rectangle +(14,\height);	
+%	}
+%\end{tikzpicture}	

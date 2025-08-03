@@ -1,0 +1,55 @@
+\documentclass{standalone}
+\input{../files/code.tex}
+
+
+
+
+
+
+\begin{document}
+
+
+
+
+
+\begin{straat}
+\breedtelijn{breedte=180,prefix=\geq}
+	\voetpad{breedte=160,hoogtelinks=34,hoogterechts=32,naam=vpl}
+	\borduur{breedte=20,hoogte=32}
+\breedtelijn{breedte=170}	
+	\goot{hoogte=20}	
+	\asfaltfietspad{breedte=150,hoogtelinks=22,hoogterechts=23,naam=fpl}
+\breedtelijn{breedte=215}		
+	\asfaltweg{breedte=107.5,hoogtelinks=23,hoogterechts=24,naam=wegl} 
+	\asfaltweg{breedte=107.5,hoogtelinks=24,hoogterechts=23,naam=wegr}
+\breedtelijn{breedte=170}		
+	\asfaltfietspad{breedte=170,hoogtelinks=23,hoogterechts=22,naam=fpr}
+%	\draw[white,line width=15\unit,dash=on 125\unit off 125\unit phase 0pt] 
+%		(fpl-topview-north east) -- (fpl-topview-south east) ;
+%	\draw[white,line width=15\unit,dash=on 125\unit off 125\unit phase 0pt] 
+%		(fpr-topview-north west) -- (fpr-topview-south west) ;
+\breedtelijn{breedte=50}			
+	\asfaltweg{breedte=30,hoogtelinks=22,hoogterechts=22}	
+	\goot{hoogte=20}		
+\breedtelijn{breedte=200}
+	\parkeerstrook{breedte=200,hoogtelinks=22,hoogterechts=25,naam=psr}
+\breedtelijn{breedte=180,prefix=\geq}	
+	\borduur{breedte=20,hoogte=35}
+	\voetpad{breedte=160,hoogtelinks=35,hoogterechts=37,naam=vpr}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+\gebruiker{element=vpl,type=voetganger,pos=0.6,richting=achter}
+\borden{element=vpl,inhoud=\bordvoetgangers}
+\gebruiker{element=fpl,type=fietser,pos=0.2,xshift=10,richting=voor}
+\gebruiker{element=wegl,type=auto,pos=0.75,richting=voor,xshift=-60}	
+\gebruiker{element=wegr,type=auto,pos=0.30,richting=achter,xshift=60}
+\gebruiker{element=fpr,type=fietser,pos=0.8,xshift=-10,richting=achter}
+\borden{element=wegl,inhoud=\borddertig,xshift=-50}		
+\borden{element=wegr,inhoud=\borddertig,xshift=50}		
+\gebruiker{element=psr,type=parkauto,pos=0.7,richting=achter}
+\borden{element=psr,inhoud=\bordparking}	
+\gebruiker{element=vpr,type=voetganger,pos=0.2,richting=voor}
+\borden{element=vpr,inhoud=\bordvoetgangers}	
+\totalebreedtelijn{prefix=\geq}	
+\end{straat}
+
+\end{document}

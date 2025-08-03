@@ -1,0 +1,43 @@
+\documentclass{article}
+\input{../code.tex} 
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment[{[]}]{tikzpicture}
+
+
+
+
+
+\begin{document}
+
+\def\width{500}
+\def\depth{2000}
+\def\height{40}
+
+
+\begin{tikzpicture}	
+\tikzset{parkeerstrooktexture/.pic={
+	\fill[parkeerstrook,rounded corners=1] (1,-1) rectangle (19,-9); 
+	\fill[parkeerstrook,rounded corners=1] (11,-11) rectangle (29,-19);
+	}}
+\clip[postaction={fill=parkeerstrooklijn}] (0,0) rectangle (\width,\depth);
+\foreach \x in {-20,0,20,...,\width}{
+\foreach \y in {0,20,...,\depth}{
+	\path (\x,\y) pic{parkeerstrooktexture};
+	}};	
+\end{tikzpicture}
+
+
+\begin{tikzpicture}
+\tikzset{parkeerstrooktexture/.pic={
+	\fill[parkeerstrook,rounded corners=1] (1,-1) rectangle (19,-19); 
+	\fill[parkeerstrook,rounded corners=1] (11,-21) rectangle (29,-39);
+	}}
+\clip[postaction={fill=parkeerstrooklijn}] (0,0) rectangle (\width,-\height);
+\foreach \x in {-20,0,20,...,\width}{	
+\foreach \y in {0,40,...,\height}{
+	\path (\x,-\y) pic{parkeerstrooktexture};
+	}};
+\end{tikzpicture}	
+
+
+\end{document}

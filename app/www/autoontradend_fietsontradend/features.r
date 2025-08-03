@@ -1,0 +1,25 @@
+features <- list(
+ title = "Wandelweg"
+,description = c(
+   "<p>
+    Wandelwegen zijn er voor veilige verplaatsingen te voet. 
+    Ze zijn onontbeerlijke schakels binnen urbane kernen om bewoners te nudgen richting duurzame mobiliteit, maar ook in landelijke gebieden zijn ze onmisbaar als recreatieve uitlaatklep.
+    Gemoriseerd verkeer en fietsen wordt er zo veel mogelijk vermeden.
+    Meer informatie is te vinden op de website van <a href='https://www.tragewegen.be/in-mijn-buurt/trage-wegen' target='_blank'>Trage Wegen vzw</a>.
+    </p>
+    "
+  ,characteristicsTable(
+     'Ondergrond' = 'Wandelwegen worden geaccentueerd door betonstraatstenen, halfharde of onverharde ondergrond.'
+    ,'Kleur'      = 'Niet bepaald.'
+    ,'Snelheid'   = 'In de uitzonderlijke gevallen dat fietsers en gemotoriseerd verkeer deze wegen kunnen gebruiken, is de maximale snelheid 5km/u (stapvoets).'
+    ,'Markering'  = 'Er worden geen lijnelementen (bv. twee goten) gebruikt die een rijweg op welke manier dan ook kunnen sugereren.'    
+    )
+  )
+,plan = function() { img("plan1") }
+,praktijkvoorbeelden = c(
+   '<p><iframe src="https://www.google.com/maps/embed?pb=!4v1603288470433!6m8!1m7!1sUNHRjKZr5AUddT2TQPwcRA!2m2!1d51.0413809948969!2d3.761888129501433!3f55.58!4f-6.540000000000006!5f0.5970117501821992" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></p>'
+  ,'<p><iframe src="https://www.google.com/maps/embed?pb=!4v1619854295546!6m8!1m7!1sTvTIKvu3-dU3WM1ymrqUcQ!2m2!1d50.78790854469008!2d4.25198387417273!3f257.3452766136735!4f-6.028079880627146!5f0.7820865974627469" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe></p>'
+  )
+)
+
+

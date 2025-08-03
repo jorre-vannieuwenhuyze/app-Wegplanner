@@ -1,0 +1,34 @@
+\documentclass{article}
+\input{../code.tex} 
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment[{[]}]{tikzpicture}
+
+
+
+
+
+\begin{document}
+
+\def\width{20}
+\def\depth{5000}
+\def\height{40}
+
+\begin{tikzpicture}	
+\clip[postaction={fill=goot,draw=goot}] (0,0) rectangle (\width,-\depth);
+\foreach \y in {-200,-2200,...,-\depth}{
+	\node at (.5*\width,\y) {\includegraphics[width=20\unit]{../ornamenten/riooldeksel/riooldeksel}} ;
+	}
+
+
+
+\end{tikzpicture}
+
+\begin{tikzpicture}	
+\clip[postaction={fill=goot}] (0,0) rectangle (\width,\height);
+\end{tikzpicture}
+
+
+
+
+
+\end{document}

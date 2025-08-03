@@ -1,0 +1,32 @@
+\documentclass{standalone}
+\input{../files/code.tex}
+
+
+
+
+
+
+\begin{document}
+
+
+\begin{straat}
+\breedtelijn{breedte=180,prefix=\geq}
+	\voetpad{breedte=160,hoogtelinks=35,hoogterechts=33,naam=vpl}
+	\borduur{breedte=20,hoogte=33}
+	\gebruiker{element=vpl,type=voetganger,pos=0.4,richting=voor}
+	\borden{element=vpl,inhoud=\bordvoetgangers}
+\breedtelijn{breedte=350,prefix=\geq}
+	\asfaltfietspad{breedte=350,hoogtelinks=23,hoogterechts=20,naam=fpl}
+	\groen{breedte=40,hoogte=18}
+	\draw[white,line width=10\unit] (fpl-topview-north west) ++(15\unit,0) -- +(0,-\topviewlength) ;
+	\draw[white,line width=10\unit,dash=on 30\unit off 270\unit phase 0pt] (fpl-topview-north) -- +(0,-\topviewlength) ;
+	\draw[white,line width=10\unit] (fpl-topview-north east) ++(-15\unit,0) -- +(0,-\topviewlength) ;
+	\gebruiker{element=fpl,type=fietser,pos=0.3,xshift=-100,richting=voor}
+	\gebruiker{element=fpl,type=fietser,pos=0.8,xshift=100,richting=achter}
+	\borden{element=fpl,inhoud=\bordvijftig\\\bordverboden\\\borduitgezonderdfietsers}
+\totalebreedtelijn{prefix=\geq}	
+\end{straat}
+
+
+
+\end{document}

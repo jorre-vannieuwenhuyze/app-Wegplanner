@@ -1,0 +1,41 @@
+\documentclass{article}
+\input{../code.tex} 
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment[{[]}]{tikzpicture}
+
+
+
+
+
+\begin{document}
+
+\def\width{300}
+\def\depth{2000}
+
+
+\begin{tikzpicture}	
+\clip (0,0) rectangle (200,200);
+\node at (100,100) {\includegraphics[page=1]{borduur}};  
+\draw[borduurlijn] (0,0) rectangle (200,200);
+\begin{scope}
+\clip (10,10) rectangle (190,190);
+\node at (100,100) {\includegraphics[page=1]{groen}};  
+\draw[borduurlijn] (10,10) rectangle (190,190);
+\end{scope}
+\node at (100,100) {\includegraphics[width=199\unit,height=199\unit]{../voertuigen/struik_top}}; 
+\end{tikzpicture}
+
+\begin{tikzpicture}	
+\node at (100,29) [anchor=south]{\includegraphics[width=199\unit,height=100\unit,trim=0 40 0 0,clip]{../voertuigen/struik_front}}; 
+\begin{scope}
+\clip (0,0) rectangle (200,30);
+\node at (100,15) {\includegraphics[page=1]{borduur}};  
+\draw[borduurlijn] (0,0) rectangle (200,30);
+\end{scope}
+\end{tikzpicture}
+
+
+
+
+
+\end{document}

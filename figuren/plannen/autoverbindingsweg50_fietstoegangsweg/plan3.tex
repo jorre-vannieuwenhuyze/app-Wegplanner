@@ -1,0 +1,65 @@
+\documentclass{standalone}
+\input{../files/code.tex}
+
+
+
+
+
+
+\begin{document}
+
+
+
+
+
+\begin{straat}
+\breedtelijn{breedte=180,prefix=\geq}
+	\voetpad{breedte=170,hoogtelinks=41,hoogterechts=39,naam=vpl}
+	\borduur{breedte=10,hoogte=39}
+	\gebruiker{element=vpl,type=voetganger,pos=0.6,richting=achter}
+	\borden{element=vpl,inhoud=\bordvoetgangers}
+\breedtelijn{breedte=175}
+	\stenenfietspad{breedte=175,hoogtelinks=37,hoogterechts=35,naam=fpl}
+	\gebruiker{element=fpl,type=fietser,pos=0.4,richting=voor}
+	\borden{element=fpl,inhoud=\borddertig\\\bordfietsers\\\bordBPverboden}
+\breedtelijn{breedte=50}
+	\borduur{breedte=10,hoogte=35}
+	\voetpad{breedte=20,hoogte=35}
+	\borduur{breedte=20,hoogte=35}
+\breedtelijn{breedte=200}
+	\parkeerstrook{breedte=200,hoogtelinks=25,hoogterechts=22,naam=psr}
+	\gebruiker{element=psr,type=parkauto,pos=0.7,richting=voor}
+	\borden{element=psr,inhoud=\bordparking}
+\breedtelijn{breedte=560}	
+	\goot{hoogte=20}
+	\asfaltweg{breedte=260,hoogtelinks=22,hoogterechts=25,naam=wegl} 
+	\asfaltweg{breedte=260,hoogtelinks=25,hoogterechts=22,naam=wegr}
+	\goot{hoogte=20}
+	\gebruiker{element=wegr,type=auto,pos=0.30,richting=achter}
+	\gebruiker{element=wegl,type=auto,pos=0.75,richting=voor}	
+	\borden{element=wegl,inhoud=\bordvijftig}
+	\borden{element=wegr,inhoud=\bordvijftig}
+\breedtelijn{breedte=200}
+	\parkeerstrook{breedte=200,hoogtelinks=22,hoogterechts=25,naam=psr}
+	\gebruiker{element=psr,type=parkauto,pos=0.7,richting=achter}
+	\borden{element=psr,inhoud=\bordparking}
+\breedtelijn{breedte=50}
+	\borduur{breedte=20,hoogte=35}
+	\voetpad{breedte=20,hoogte=35}
+	\borduur{breedte=10,hoogte=35}
+\breedtelijn{breedte=175}
+	\stenenfietspad{breedte=175,hoogtelinks=35,hoogterechts=37,naam=fpr}
+	\gebruiker{element=fpr,type=fietser,pos=0.8,richting=achter}	
+	\borden{element=fpr,inhoud=\borddertig\\\bordfietsers\\\bordBPverboden}
+\breedtelijn{breedte=180,prefix=\geq}	
+	\borduur{breedte=10,hoogte=39}
+	\voetpad{breedte=170,hoogtelinks=39,hoogterechts=41,naam=vpr}
+	\gebruiker{element=vpr,type=voetganger,pos=0.2,richting=voor}
+	\borden{element=vpr,inhoud=\bordvoetgangers}
+\totalebreedtelijn{prefix=\geq}	
+\end{straat}
+
+
+
+
+\end{document}

@@ -1,0 +1,28 @@
+\documentclass{standalone}
+\input{../files/code.tex}
+
+
+
+
+
+
+\begin{document}
+
+\tikzset{goot/.style={preaction={draw=black,line width=10\unit}
+                     ,draw=black!50,line width=6\unit
+                     ,postaction={draw=black,line width=2\unit}
+                     }
+        }
+
+\begin{straat}
+\breedtelijn{breedte=300,prefix=\geq}
+	\voetpad{breedte=150,hoogtelinks=22,hoogterechts=20,naam=vpl}
+	\voetpad{breedte=150,hoogtelinks=20,hoogterechts=22,naam=vpr}
+	\draw[goot] (vpl-topview-north east) -- (vpl-topview-south east); 
+	\draw[goot] (vpl-frontview-north east) -- (vpl-frontview-south east); 
+	\gebruiker{element=vpl,type=voetganger,pos=0.6,richting=achter}
+	\gebruiker{element=vpr,type=fietser,pos=0.3,richting=voor}
+	\borden{element=vpl,xshift=75,inhoud=\bordverboden\\\borduitgezonderdfietsers\\\bordtien}
+\end{straat}
+
+\end{document}

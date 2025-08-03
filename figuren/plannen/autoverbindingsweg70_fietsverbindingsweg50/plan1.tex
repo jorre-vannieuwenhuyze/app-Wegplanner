@@ -1,0 +1,61 @@
+\documentclass{standalone}
+\input{../files/code.tex}
+
+
+
+
+
+
+\begin{document}
+
+
+\def\topviewlength{4000}
+
+
+\begin{straat}
+\groen{breedte=50,hoogte=30}
+\borduur{breedte=20,hoogte=34}
+\path (startbreedtelijn) -- +(70,0) coordinate(startbreedtelijn)
+	  (starttotalebreedtelijn) -- +(70,0) coordinate(starttotalebreedtelijn)
+	  ;
+\breedtelijn{breedte=250}
+	\asfaltfietspad{breedte=250,hoogtelinks=34,hoogterechts=32,naam=fpl}
+	\draw[white,line width=10\unit] (fpl-topview-north west) ++(15\unit,0) -- +(0,-\topviewlength) ;
+	\draw[white,line width=10\unit] (fpl-topview-north east) ++(-15\unit,0) -- +(0,-\topviewlength) ;
+	\gebruiker{element=fpl,type=fietser,pos=0.4,xshift=-50,richting=voor}
+	\borden{element=fpl,inhoud=\bordfietsers\\\bordvijftig}
+\breedtelijn{breedte=100}
+	\borduur{breedte=20,hoogte=32}
+	\groen{breedte=60,hoogte=32}
+	\borduur{breedte=20,hoogte=32}
+\breedtelijn{breedte=600}	
+	\goot{hoogte=20}
+	\asfaltweg{breedte=280,hoogtelinks=22,hoogterechts=25,naam=wegl} 
+	\asfaltweg{breedte=280,hoogtelinks=25,hoogterechts=22,naam=wegr}
+	\goot{hoogte=20}
+	\draw[white,line width=15\unit] (wegl-topview-north west) ++(20,0) -- +(0,-\topviewlength) ;
+	\draw[white,line width=15\unit,dash=on 250\unit off 1000\unit phase 0pt] (wegl-topview-north east) -- +(0,-\topviewlength) ;
+	\draw[white,line width=15\unit] (wegr-topview-north east) ++(-20,0) -- +(0,-\topviewlength) ;
+	\gebruiker{element=wegr,type=auto,pos=0.30,richting=achter}
+	\gebruiker{element=wegl,type=auto,pos=0.75,richting=voor}	
+	\borden{element=wegl,inhoud=\bordautoweg\\\bordzeventig,xshift=130}	
+\breedtelijn{breedte=100}
+	\borduur{breedte=20,hoogte=32}
+	\groen{breedte=60,hoogte=32}
+	\borduur{breedte=20,hoogte=32}
+\breedtelijn{breedte=250}
+	\asfaltfietspad{breedte=250,hoogtelinks=32,hoogterechts=34,naam=fpr}
+	\draw[white,line width=10\unit] (fpr-topview-north west) ++(15\unit,0) -- +(0,-\topviewlength) ;
+	\draw[white,line width=10\unit] (fpr-topview-north east) ++(-15\unit,0) -- +(0,-\topviewlength) ;
+	\gebruiker{element=fpr,type=fietser,pos=0.5,xshift=-50,richting=achter}
+	\gebruiker{element=fpr,type=fietser,pos=0.8,xshift=50,richting=achter}	
+	\borden{element=fpr,inhoud=\bordfietsers\\\bordvijftig}
+\borduur{breedte=20,hoogte=34}
+\groen{breedte=50,hoogte=30}
+\totalebreedtelijn{}
+\end{straat}
+
+
+
+
+\end{document}

@@ -1,0 +1,50 @@
+\documentclass{standalone}
+\input{../files/code.tex}
+
+
+
+
+
+
+\begin{document}
+
+
+\begin{straat}
+\breedtelijn{breedte=180,prefix=\geq}
+	\voetpad{breedte=160,hoogtelinks=32,hoogterechts=30,naam=vpl}
+	\borduur{breedte=20,hoogte=30}
+\breedtelijn{breedte=55}	
+	\goot{hoogte=20}	
+	\stenenfietspad{breedte=35,hoogtelinks=22,hoogterechts=22}
+\breedtelijn{breedte=150}	
+	\asfaltfietspad{breedte=150,hoogtelinks=22,hoogterechts=23,naam=wegl}
+\breedtelijn{breedte=85}	
+	\stenenfietspad{breedte=42.5,hoogtelinks=23,hoogterechts=23}	
+	\stenenfietspad{breedte=42.5,hoogtelinks=23,hoogterechts=23}	
+\breedtelijn{breedte=150}	
+	\asfaltfietspad{breedte=150,hoogtelinks=23,hoogterechts=22,naam=wegr}	
+\breedtelijn{breedte=75}	
+	\stenenfietspad{breedte=55,hoogtelinks=22,hoogterechts=22}	
+	\goot{hoogte=20}
+\breedtelijn{breedte=200}
+	\parkeerstrook{breedte=200,hoogtelinks=22,hoogterechts=25,naam=psr}
+\breedtelijn{breedte=180,prefix=\geq}	
+	\borduur{breedte=20,hoogte=35}
+	\voetpad{breedte=160,hoogtelinks=35,hoogterechts=37,naam=vpr}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+\gebruiker{element=vpl,type=voetganger,pos=0.6,richting=achter}
+\gebruiker{element=wegl,type=fietser,pos=0.2,richting=voor,xshift=-20}
+\gebruiker{element=wegl,type=auto,pos=0.75,richting=voor}	
+%\gebruiker{element=wegr,type=auto,pos=0.30,richting=achter}
+\gebruiker{element=wegr,type=fietser,pos=0.8,richting=achter,xshift=20}
+\gebruiker{element=psr,type=parkauto,pos=0.7,richting=achter}
+\gebruiker{element=vpr,type=voetganger,pos=0.2,richting=voor}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\borden{element=vpl,inhoud=\bordvoetgangers}
+\borden{element=wegl,inhoud=\borddertig}
+\borden{element=wegr,inhoud=\borddertig}
+\borden{element=psr,inhoud=\bordparking}
+\borden{element=vpr,inhoud=\bordvoetgangers}		
+\end{straat}
+
+\end{document}

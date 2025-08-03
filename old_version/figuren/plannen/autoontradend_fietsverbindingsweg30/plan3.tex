@@ -1,0 +1,34 @@
+\documentclass{standalone}
+\input{../files/code.tex}
+
+
+
+
+
+
+\begin{document}
+
+
+\begin{straat}
+\breedtelijn{breedte=180,prefix=\geq}
+	\voetpad{breedte=160,hoogtelinks=35,hoogterechts=33,naam=vpl}
+	\borduur{breedte=20,hoogte=33}
+	\gebruiker{element=vpl,type=voetganger,pos=0.4,richting=voor}
+	\borden{element=vpl,inhoud=\bordvoetgangers}
+\breedtelijn{breedte=250,prefix=\geq}
+	\goot{hoogte=20}
+	\asfaltfietspad{breedte=105,hoogtelinks=22,hoogterechts=24,naam=fpl}
+	\asfaltfietspad{breedte=105,hoogtelinks=24,hoogterechts=22,naam=fpr}	
+%	\draw[white,line width=10\unit,dash=on 20\unit off 100\unit phase 0pt] (fpl-topview-north east) -- (fpl-topview-south east) ;
+	\goot{hoogte=20}
+	\gebruiker{element=fpl,type=fietser,pos=0.3,xshift=-10,richting=voor}
+	\gebruiker{element=fpr,type=fietser,pos=0.8,xshift=10,richting=achter}
+	\borden{element=fpl,xshift=80,inhoud=\borddertig\\\bordverboden\\\borduitgezonderdfietsers}
+\breedtelijn{breedte=180,prefix=\geq}
+	\borduur{breedte=20,hoogte=33}
+	\voetpad{breedte=160,hoogtelinks=33,hoogterechts=35,naam=vpl}
+	\gebruiker{element=vpl,type=voetganger,pos=0.4,richting=voor}
+	\borden{element=vpl,inhoud=\bordvoetgangers}
+\end{straat}
+
+\end{document}

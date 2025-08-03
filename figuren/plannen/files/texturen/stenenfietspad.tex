@@ -1,0 +1,65 @@
+\documentclass{article}
+\input{../code.tex} 
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment[{[]}]{tikzpicture}
+
+
+
+
+
+\begin{document}
+
+\def\width{600}
+\def\depth{2000}
+\def\height{40}
+
+
+\begin{tikzpicture}	
+\tikzset{stenenfietspadtexture/.pic={
+	\draw[stenenfietspadlijn,fill=stenenfietspad] (0,0) -- (20,20) -- (30,10) -- (10,-10) -- cycle;
+	\draw[stenenfietspadlijn,fill=stenenfietspad] (10,10) -- (20,20) -- (0,40) -- (-10,30) -- cycle;  
+	}}
+\clip (0,0)	rectangle (\width,\depth);
+\foreach \x in {-20,0,20,...,\width}{
+\foreach \y in {-40,0,40,...,\depth}{
+	\path (\x,\y) pic{stenenfietspadtexture};
+	}};		
+\end{tikzpicture}
+
+
+\begin{tikzpicture}
+\clip (0,0)	rectangle (\width,\height);
+\foreach \x in {0,20,...,\width}{ 
+	\draw[stenenfietspadlijn,fill=stenenfietspad] (\x,0) rectangle +(20,\height);	
+	}
+\end{tikzpicture}	
+
+
+\end{document}
+
+
+
+
+
+
+
+
+%\begin{tikzpicture}	
+%\tikzset{stenenfietspadtexture/.pic={
+%	\draw[stenenfietspadlijn,fill=stenenfietspad] (0,0) -- (14,14) -- (21,7) -- (7,-7) -- cycle;
+%	\draw[stenenfietspadlijn,fill=stenenfietspad] (7,7) -- (14,14) -- (0,28) -- (-7,21) -- cycle;  
+%	}}
+%\clip (0,0)	rectangle (\width,\depth);
+%\foreach \x in {-14,0,14,...,\width}{
+%\foreach \y in {-28,0,28,...,\depth}{
+%	\path (\x,\y) pic{stenenfietspadtexture};
+%	}};		
+%\end{tikzpicture}
+%
+%
+%\begin{tikzpicture}
+%\clip (0,0)	rectangle (\width,\height);
+%\foreach \x in {0,14,...,\width}{ 
+%	\draw[stenenfietspadlijn,fill=stenenfietspad] (\x,0) rectangle +(14,\height);	
+%	}
+%\end{tikzpicture}

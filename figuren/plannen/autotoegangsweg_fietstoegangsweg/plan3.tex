@@ -1,0 +1,48 @@
+\documentclass{standalone}
+\input{../files/code.tex}
+
+
+
+
+
+
+\begin{document}
+
+
+
+
+
+\begin{straat}
+\breedtelijn{breedte=180,prefix=\geq}
+	\voetpad{breedte=160,hoogtelinks=37,hoogterechts=35,naam=vpl}
+	\borduur{breedte=20,hoogte=35}
+	\gebruiker{element=vpl,type=voetganger,pos=0.6,richting=achter}
+	\borden{element=vpl,inhoud=\bordvoetgangers}
+\breedtelijn{breedte=200}
+	\parkeerstrook{breedte=200,hoogtelinks=25,hoogterechts=22,naam=psr}
+%	\gebruiker{element=psr,type=parkauto,pos=0.6,richting=voor}
+	\borden{element=psr,inhoud=\bordparking}	
+\breedtelijn{breedte=535}	
+	\goot{hoogte=20}
+	\stenenfietspad{breedte=247.5,hoogtelinks=22,hoogterechts=23,naam=wegl}
+	\stenenfietspad{breedte=247.5,hoogtelinks=23,hoogterechts=22,naam=wegr}
+	\goot{hoogte=20}
+	\gebruiker{element=wegl,type=fietser,pos=0.2,richting=voor,xshift=-40}
+	\gebruiker{element=wegl,type=auto,pos=0.75,richting=voor}	
+%	\gebruiker{element=wegr,type=auto,pos=0.30,richting=achter}
+	\gebruiker{element=wegr,type=fietser,pos=0.8,richting=achter,xshift=20}
+	\borden{element=wegl,inhoud=\borddertig}
+	\borden{element=wegr,inhoud=\borddertig}	
+\breedtelijn{breedte=200}
+	\parkeerstrook{breedte=200,hoogtelinks=22,hoogterechts=25,naam=psr}
+	\gebruiker{element=psr,type=parkauto,pos=0.7,richting=achter}
+	\borden{element=psr,inhoud=\bordparking}
+\breedtelijn{breedte=180,prefix=\geq}	
+	\borduur{breedte=20,hoogte=35}
+	\voetpad{breedte=160,hoogtelinks=35,hoogterechts=37,naam=vpr}
+	\gebruiker{element=vpr,type=voetganger,pos=0.2,richting=voor}
+	\borden{element=vpr,inhoud=\bordvoetgangers}
+\totalebreedtelijn{prefix=\geq}	
+\end{straat}
+
+\end{document}

@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\input{../files/code.tex}
+
+
+
+
+
+
+\begin{document}
+
+\def\topviewlength{400}
+
+\begin{straat}
+\breedtelijn{breedte=180,prefix=\geq}
+	\voetpad{breedte=160,hoogtelinks=24,hoogterechts=22,naam=vp}
+	\goot{hoogte=20,naam=gt}
+	\gebruiker{element=vp,type=voetganger,pos=0.7,xshift=10,richting=achter}
+	\borden{element=vp,xshift=10,inhoud=\bordverboden}
+\end{straat}
+
+\end{document}

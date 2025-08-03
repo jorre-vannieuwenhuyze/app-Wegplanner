@@ -1,0 +1,27 @@
+\documentclass{article}
+\input{../code.tex} 
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment[{[]}]{tikzpicture}
+
+
+
+
+
+\begin{document}
+
+\def\width{500}
+\def\depth{5000}
+\def\height{40}
+
+
+\begin{tikzpicture}	
+\clip[postaction={fill=asfaltweg}] (0,0)	rectangle (\width,\depth);	
+\end{tikzpicture}
+
+
+\begin{tikzpicture}
+\clip[postaction={fill=asfaltweg}] (0,0)	rectangle (\width,\height);
+\end{tikzpicture}	
+
+
+\end{document}

@@ -1,0 +1,2 @@
+#!/bin/bash
+for i in *.pdf ; do pdftoppm "${i}" "${i%%.pdf}" -png -f 1 -singlefile; done

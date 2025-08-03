@@ -1,0 +1,35 @@
+\documentclass{article}
+\input{../code.tex} 
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment[{[]}]{tikzpicture}
+
+
+
+
+
+\begin{document}
+
+\def\width{300}
+\def\depth{5000}
+
+
+%\begin{tikzpicture}	
+%\clip[postaction={fill=borduur}] (0,0) rectangle (\width,\depth);
+%\foreach \x in {0,5,...,\width}{
+%\foreach \y in {0,5,...,\depth}{
+%	\draw[borduurlijn] (\x,\y) +(5,0) -- +(0,5);
+%	}};		
+%\end{tikzpicture}
+
+\begin{tikzpicture}	
+\clip[postaction={fill=borduur}] (0,0) rectangle (\width,\depth);
+\foreach \y in {0,5,...,5300}{
+	\draw[borduurlijn] (0,\y)  -- +(\width,-\width);
+	};		
+\end{tikzpicture}
+
+
+
+
+
+\end{document}

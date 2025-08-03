@@ -1,0 +1,826 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.16)  13 APR 2025 11:25
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**plan3.tex
+(./plan3.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/standalone/standalone.cls
+Document Class: standalone 2018/03/26 v1.3a Class to compile TeX sub-files stan
+dalone
+(/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks16
+\XKV@tempa@toks=\toks17
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count185
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\sa@internal=\count186
+\c@sapage=\count187
+
+(/usr/share/texlive/texmf-dist/tex/latex/standalone/standalone.cfg
+File: standalone.cfg 2018/03/26 v1.3a Default configuration file for 'standalon
+e' class
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count188
+\c@section=\count189
+\c@subsection=\count190
+\c@subsubsection=\count191
+\c@paragraph=\count192
+\c@subparagraph=\count193
+\c@figure=\count194
+\c@table=\count195
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+\sa@box=\box50
+) (../files/code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2022/01/26 3.70 The Babel package
+\babel@savecnt=\count196
+\U@D=\dimen139
+\l@unhyphenated=\language87
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count197
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-dutch/dutch.ldf
+Language: dutch 2021/08/29 v3.8l Dutch support from the babel system
+Package babel Info: Making " an active character on input line 127.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/sfmath/sfmath.sty
+Package: sfmath 2007/08/27 v0.8 sans serif maths
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 329.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 330.
+\symSFMath=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `SFMath' in version `normal'
+(Font)                  OT1/cmss/m/sl --> OT1/cmss/m/sl on input line 343.
+LaTeX Font Info:    Overwriting symbol font `SFMath' in version `bold'
+(Font)                  OT1/cmss/m/sl --> OT1/cmss/bx/n on input line 344.
+LaTeX Font Info:    Redeclaring math symbol \imath on input line 398.
+LaTeX Font Info:    Redeclaring math symbol \jmath on input line 399.
+\symSFMathUp=\mathgroup5
+LaTeX Font Info:    Overwriting symbol font `SFMathUp' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 406.
+LaTeX Font Info:    Overwriting symbol font `SFMathUp' in version `bold'
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 407.
+LaTeX Font Info:    Redeclaring math symbol \ldotp on input line 410.
+\symSFMathGreek=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `SFMathGreek' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 419.
+LaTeX Font Info:    Overwriting symbol font `SFMathGreek' in version `bold'
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 420.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 422.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 423.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 424.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 425.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 426.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 427.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 428.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 429.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 430.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 431.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 432.
+\symSFMathUpGreek=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `SFMathUpGreek' in version `normal'
+
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 436.
+LaTeX Font Info:    Overwriting symbol font `SFMathUpGreek' in version `bold'
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 437.
+LaTeX Font Info:    Overwriting math alphabet `\mathnormal' in version `normal'
+
+(Font)                  OML/cmm/m/it --> OT1/cmss/m/sl on input line 446.
+LaTeX Font Info:    Overwriting math alphabet `\mathnormal' in version `bold'
+(Font)                  OML/cmm/b/it --> OT1/cmss/bx/n on input line 447.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 449.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 450.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 452.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 453.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/sl on input line 455.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/sl on input line 456.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 458.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 459.
+LaTeX Font Info:    Overwriting math alphabet `\mathsl' in version `bold'
+(Font)                  OT1/cmss/m/sl --> OT1/cmss/m/sl on input line 466.
+)
+\unit=\skip49
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks18
+\pgfutil@tempdima=\dimen140
+\pgfutil@tempdimb=\dimen141
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
+ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box51
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
+))
+Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen142
+\Gin@req@width=\dimen143
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks19
+\pgfkeys@temptoks=\toks20
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
+ex
+\pgfkeys@tmptoks=\toks21
+))
+\pgf@x=\dimen144
+\pgf@y=\dimen145
+\pgf@xa=\dimen146
+\pgf@ya=\dimen147
+\pgf@xb=\dimen148
+\pgf@yb=\dimen149
+\pgf@xc=\dimen150
+\pgf@yc=\dimen151
+\pgf@xd=\dimen152
+\pgf@yd=\dimen153
+\w@pgf@writea=\write3
+\r@pgf@reada=\read3
+\c@pgf@counta=\count198
+\c@pgf@countb=\count199
+\c@pgf@countc=\count266
+\c@pgf@countd=\count267
+\t@pgf@toka=\toks22
+\t@pgf@tokb=\toks23
+\t@pgf@tokc=\toks24
+\pgf@sys@id@count=\count268
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f
+File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex
+File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfsyssoftpath@smallbuffer@items=\count269
+\pgfsyssoftpath@bigbuffer@items=\count270
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex
+File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen154
+\pgfmath@count=\count271
+\pgfmath@box=\box52
+\pgfmath@toks=\toks25
+\pgfmath@stack@operand=\toks26
+\pgfmath@stack@operation=\toks27
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count272
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x
+File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@picminx=\dimen155
+\pgf@picmaxx=\dimen156
+\pgf@picminy=\dimen157
+\pgf@picmaxy=\dimen158
+\pgf@pathminx=\dimen159
+\pgf@pathmaxx=\dimen160
+\pgf@pathminy=\dimen161
+\pgf@pathmaxy=\dimen162
+\pgf@xx=\dimen163
+\pgf@xy=\dimen164
+\pgf@yx=\dimen165
+\pgf@yy=\dimen166
+\pgf@zx=\dimen167
+\pgf@zy=\dimen168
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex
+File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@path@lastx=\dimen169
+\pgf@path@lasty=\dimen170
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex
+File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@shorten@end@additional=\dimen171
+\pgf@shorten@start@additional=\dimen172
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x
+File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfpic=\box53
+\pgf@hbox=\box54
+\pgf@layerbox@main=\box55
+\pgf@picture@serial@count=\count273
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex
+File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgflinewidth=\dimen173
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex
+File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@pt@x=\dimen174
+\pgf@pt@y=\dimen175
+\pgf@pt@temp=\dimen176
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex
+File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex
+File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x
+File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowsep=\dimen177
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@max=\dimen178
+\pgf@sys@shading@range@num=\count274
+\pgf@shadingcount=\count275
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex
+File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfexternal@startupbox=\box56
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x
+File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex
+File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex
+File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfnodeparttextbox=\box57
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty
+Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@nodesepstart=\dimen179
+\pgf@nodesepend=\dimen180
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty
+Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen181
+\pgffor@skip=\dimen182
+\pgffor@stack=\toks28
+\pgffor@toks=\toks29
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex
+File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@plot@mark@count=\count276
+\pgfplotmarksize=\dimen183
+)
+\tikz@lastx=\dimen184
+\tikz@lasty=\dimen185
+\tikz@lastxsaved=\dimen186
+\tikz@lastysaved=\dimen187
+\tikz@lastmovetox=\dimen188
+\tikz@lastmovetoy=\dimen189
+\tikzleveldistance=\dimen190
+\tikzsiblingdistance=\dimen191
+\tikz@figbox=\box58
+\tikz@figbox@bg=\box59
+\tikz@tempbox=\box60
+\tikz@tempbox@bg=\box61
+\tikztreelevel=\count277
+\tikznumberofchildren=\count278
+\tikznumberofcurrentchild=\count279
+\tikz@fig@count=\count280
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfmatrixcurrentrow=\count281
+\pgfmatrixcurrentcolumn=\count282
+\pgf@matrix@numberofcolumns=\count283
+)
+\tikz@expandcount=\count284
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count285
+)
+\c@voetganger=\count286
+\c@fietser=\count287
+\c@auto=\count288
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count289
+\l__pdf_internal_box=\box62
+)
+(./plan3.aux)
+\openout1 = `plan3.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count290
+\scratchdimen=\dimen192
+\scratchbox=\box63
+\nofMPsegments=\count291
+\nofMParguments=\count292
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count293
+\MPscratchDim=\dimen193
+\MPnumerator=\count294
+\makeMPintoPDFobject=\count295
+\everyMPtoPDFconversion=\toks31
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 16.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 16.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 16.
+<../files/texturen/voetpad.pdf, id=4, page=1, 342.43134pt x 1139.09561pt>
+File: ../files/texturen/voetpad.pdf Graphic file (type pdf)
+<use ../files/texturen/voetpad.pdf, page 1>
+Package pdftex.def Info: ../files/texturen/voetpad.pdf , page1 used on input li
+ne 17.
+(pdftex.def)             Requested size: 342.4305pt x 1139.09283pt.
+<../files/texturen/voetpad.pdf, id=5, page=2, 342.43134pt x 23.7658pt>
+File: ../files/texturen/voetpad.pdf Graphic file (type pdf)
+<use ../files/texturen/voetpad.pdf, page 2>
+Package pdftex.def Info: ../files/texturen/voetpad.pdf , page2 used on input li
+ne 17.
+(pdftex.def)             Requested size: 342.4305pt x 23.76572pt.
+<../files/texturen/borduur.pdf, id=6, page=1, 171.71754pt x 2846.2336pt>
+File: ../files/texturen/borduur.pdf Graphic file (type pdf)
+<use ../files/texturen/borduur.pdf, page 1>
+Package pdftex.def Info: ../files/texturen/borduur.pdf , page1 used on input li
+ne 18.
+(pdftex.def)             Requested size: 171.71712pt x 2846.22668pt.
+File: ../files/texturen/borduur.pdf Graphic file (type pdf)
+<use ../files/texturen/borduur.pdf, page 1>
+Package pdftex.def Info: ../files/texturen/borduur.pdf , page1 used on input li
+ne 18.
+(pdftex.def)             Requested size: 171.71712pt x 2846.22668pt.
+<../files/texturen/parkeerstrook.pdf, id=7, page=1, 285.52672pt x 1139.09561pt>
+
+File: ../files/texturen/parkeerstrook.pdf Graphic file (type pdf)
+<use ../files/texturen/parkeerstrook.pdf, page 1>
+Package pdftex.def Info: ../files/texturen/parkeerstrook.pdf , page1 used on in
+put line 20.
+(pdftex.def)             Requested size: 285.526pt x 1139.09283pt.
+<../files/texturen/plantenbak.pdf, id=8, page=1, 114.81294pt x 114.81294pt>
+File: ../files/texturen/plantenbak.pdf Graphic file (type pdf)
+<use ../files/texturen/plantenbak.pdf, page 1>
+Package pdftex.def Info: ../files/texturen/plantenbak.pdf , page1 used on input
+ line 20.
+(pdftex.def)             Requested size: 114.81264pt x 114.81264pt.
+<../files/texturen/plantenbak.pdf, id=9, page=2, 114.81294pt x 74.90987pt>
+File: ../files/texturen/plantenbak.pdf Graphic file (type pdf)
+<use ../files/texturen/plantenbak.pdf, page 2>
+Package pdftex.def Info: ../files/texturen/plantenbak.pdf , page2 used on input
+ line 20.
+(pdftex.def)             Requested size: 114.81264pt x 74.90968pt.
+<../files/texturen/parkeerstrook.pdf, id=10, page=2, 285.52672pt x 23.7658pt>
+File: ../files/texturen/parkeerstrook.pdf Graphic file (type pdf)
+<use ../files/texturen/parkeerstrook.pdf, page 2>
+Package pdftex.def Info: ../files/texturen/parkeerstrook.pdf , page2 used on in
+put line 20.
+(pdftex.def)             Requested size: 285.526pt x 23.76572pt.
+<../files/texturen/goot.pdf, id=11, page=1, 12.38426pt x 2846.2336pt>
+File: ../files/texturen/goot.pdf Graphic file (type pdf)
+<use ../files/texturen/goot.pdf, page 1>
+Package pdftex.def Info: ../files/texturen/goot.pdf , page1 used on input line 
+22.
+(pdftex.def)             Requested size: 12.38422pt x 2846.22668pt.
+<../files/texturen/goot.pdf, id=12, page=2, 12.38426pt x 23.7658pt>
+File: ../files/texturen/goot.pdf Graphic file (type pdf)
+<use ../files/texturen/goot.pdf, page 2>
+Package pdftex.def Info: ../files/texturen/goot.pdf , page2 used on input line 
+22.
+(pdftex.def)             Requested size: 12.38422pt x 23.76572pt.
+<../files/texturen/asfaltweg.pdf, id=13, page=1, 285.52672pt x 2846.2336pt>
+File: ../files/texturen/asfaltweg.pdf Graphic file (type pdf)
+<use ../files/texturen/asfaltweg.pdf, page 1>
+Package pdftex.def Info: ../files/texturen/asfaltweg.pdf , page1 used on input 
+line 23.
+(pdftex.def)             Requested size: 285.526pt x 2846.22668pt.
+<../files/texturen/asfaltweg.pdf, id=14, page=2, 285.52672pt x 23.7658pt>
+File: ../files/texturen/asfaltweg.pdf Graphic file (type pdf)
+<use ../files/texturen/asfaltweg.pdf, page 2>
+Package pdftex.def Info: ../files/texturen/asfaltweg.pdf , page2 used on input 
+line 23.
+(pdftex.def)             Requested size: 285.526pt x 23.76572pt.
+<../files/texturen/asfaltfietspad.pdf, id=15, page=1, 285.52672pt x 2846.2336pt
+>
+File: ../files/texturen/asfaltfietspad.pdf Graphic file (type pdf)
+<use ../files/texturen/asfaltfietspad.pdf, page 1>
+Package pdftex.def Info: ../files/texturen/asfaltfietspad.pdf , page1 used on i
+nput line 25.
+(pdftex.def)             Requested size: 285.526pt x 2846.22668pt.
+<../files/texturen/asfaltfietspad.pdf, id=16, page=2, 285.52672pt x 23.7658pt>
+File: ../files/texturen/asfaltfietspad.pdf Graphic file (type pdf)
+<use ../files/texturen/asfaltfietspad.pdf, page 2>
+Package pdftex.def Info: ../files/texturen/asfaltfietspad.pdf , page2 used on i
+nput line 25.
+(pdftex.def)             Requested size: 285.526pt x 23.76572pt.
+File: ../files/texturen/asfaltweg.pdf Graphic file (type pdf)
+<use ../files/texturen/asfaltweg.pdf, page 1>
+Package pdftex.def Info: ../files/texturen/asfaltweg.pdf , page1 used on input 
+line 27.
+(pdftex.def)             Requested size: 285.526pt x 2846.22668pt.
+File: ../files/texturen/asfaltweg.pdf Graphic file (type pdf)
+<use ../files/texturen/asfaltweg.pdf, page 2>
+Package pdftex.def Info: ../files/texturen/asfaltweg.pdf , page2 used on input 
+line 27.
+(pdftex.def)             Requested size: 285.526pt x 23.76572pt.
+File: ../files/texturen/asfaltweg.pdf Graphic file (type pdf)
+<use ../files/texturen/asfaltweg.pdf, page 1>
+Package pdftex.def Info: ../files/texturen/asfaltweg.pdf , page1 used on input 
+line 28.
+(pdftex.def)             Requested size: 285.526pt x 2846.22668pt.
+File: ../files/texturen/asfaltweg.pdf Graphic file (type pdf)
+<use ../files/texturen/asfaltweg.pdf, page 2>
+Package pdftex.def Info: ../files/texturen/asfaltweg.pdf , page2 used on input 
+line 28.
+(pdftex.def)             Requested size: 285.526pt x 23.76572pt.
+File: ../files/texturen/asfaltfietspad.pdf Graphic file (type pdf)
+<use ../files/texturen/asfaltfietspad.pdf, page 1>
+Package pdftex.def Info: ../files/texturen/asfaltfietspad.pdf , page1 used on i
+nput line 30.
+(pdftex.def)             Requested size: 285.526pt x 2846.22668pt.
+File: ../files/texturen/asfaltfietspad.pdf Graphic file (type pdf)
+<use ../files/texturen/asfaltfietspad.pdf, page 2>
+Package pdftex.def Info: ../files/texturen/asfaltfietspad.pdf , page2 used on i
+nput line 30.
+(pdftex.def)             Requested size: 285.526pt x 23.76572pt.
+File: ../files/texturen/asfaltweg.pdf Graphic file (type pdf)
+<use ../files/texturen/asfaltweg.pdf, page 1>
+Package pdftex.def Info: ../files/texturen/asfaltweg.pdf , page1 used on input 
+line 32.
+(pdftex.def)             Requested size: 285.526pt x 2846.22668pt.
+File: ../files/texturen/asfaltweg.pdf Graphic file (type pdf)
+<use ../files/texturen/asfaltweg.pdf, page 2>
+Package pdftex.def Info: ../files/texturen/asfaltweg.pdf , page2 used on input 
+line 32.
+(pdftex.def)             Requested size: 285.526pt x 23.76572pt.
+File: ../files/texturen/goot.pdf Graphic file (type pdf)
+<use ../files/texturen/goot.pdf, page 1>
+Package pdftex.def Info: ../files/texturen/goot.pdf , page1 used on input line 
+33.
+(pdftex.def)             Requested size: 12.38422pt x 2846.22668pt.
+File: ../files/texturen/goot.pdf Graphic file (type pdf)
+<use ../files/texturen/goot.pdf, page 2>
+Package pdftex.def Info: ../files/texturen/goot.pdf , page2 used on input line 
+33.
+(pdftex.def)             Requested size: 12.38422pt x 23.76572pt.
+File: ../files/texturen/parkeerstrook.pdf Graphic file (type pdf)
+<use ../files/texturen/parkeerstrook.pdf, page 1>
+Package pdftex.def Info: ../files/texturen/parkeerstrook.pdf , page1 used on in
+put line 39.
+(pdftex.def)             Requested size: 285.526pt x 1139.09283pt.
+File: ../files/texturen/plantenbak.pdf Graphic file (type pdf)
+<use ../files/texturen/plantenbak.pdf, page 1>
+Package pdftex.def Info: ../files/texturen/plantenbak.pdf , page1 used on input
+ line 39.
+(pdftex.def)             Requested size: 114.81264pt x 114.81264pt.
+File: ../files/texturen/plantenbak.pdf Graphic file (type pdf)
+<use ../files/texturen/plantenbak.pdf, page 2>
+Package pdftex.def Info: ../files/texturen/plantenbak.pdf , page2 used on input
+ line 39.
+(pdftex.def)             Requested size: 114.81264pt x 74.90968pt.
+File: ../files/texturen/parkeerstrook.pdf Graphic file (type pdf)
+<use ../files/texturen/parkeerstrook.pdf, page 2>
+Package pdftex.def Info: ../files/texturen/parkeerstrook.pdf , page2 used on in
+put line 39.
+(pdftex.def)             Requested size: 285.526pt x 23.76572pt.
+File: ../files/texturen/borduur.pdf Graphic file (type pdf)
+<use ../files/texturen/borduur.pdf, page 1>
+Package pdftex.def Info: ../files/texturen/borduur.pdf , page1 used on input li
+ne 41.
+(pdftex.def)             Requested size: 171.71712pt x 2846.22668pt.
+File: ../files/texturen/borduur.pdf Graphic file (type pdf)
+<use ../files/texturen/borduur.pdf, page 1>
+Package pdftex.def Info: ../files/texturen/borduur.pdf , page1 used on input li
+ne 41.
+(pdftex.def)             Requested size: 171.71712pt x 2846.22668pt.
+File: ../files/texturen/voetpad.pdf Graphic file (type pdf)
+<use ../files/texturen/voetpad.pdf, page 1>
+Package pdftex.def Info: ../files/texturen/voetpad.pdf , page1 used on input li
+ne 42.
+(pdftex.def)             Requested size: 342.4305pt x 1139.09283pt.
+File: ../files/texturen/voetpad.pdf Graphic file (type pdf)
+<use ../files/texturen/voetpad.pdf, page 2>
+Package pdftex.def Info: ../files/texturen/voetpad.pdf , page2 used on input li
+ne 42.
+(pdftex.def)             Requested size: 342.4305pt x 23.76572pt.
+<../files/voertuigen/voetganger7_back.png, id=17, 94.6737pt x 276.7941pt>
+File: ../files/voertuigen/voetganger7_back.png Graphic file (type png)
+<use ../files/voertuigen/voetganger7_back.png>
+Package pdftex.def Info: ../files/voertuigen/voetganger7_back.png  used on inpu
+t line 44.
+(pdftex.def)             Requested size: 35.02872pt x 102.4122pt.
+<../files/voertuigen/voetganger7_top.png, id=19, 90.3375pt x 100.4553pt>
+File: ../files/voertuigen/voetganger7_top.png Graphic file (type png)
+<use ../files/voertuigen/voetganger7_top.png>
+Package pdftex.def Info: ../files/voertuigen/voetganger7_top.png  used on input
+ line 44.
+(pdftex.def)             Requested size: 33.42435pt x 37.16786pt.
+<../files/borden/D11.png, id=20, 75.28125pt x 75.28125pt>
+File: ../files/borden/D11.png Graphic file (type png)
+<use ../files/borden/D11.png>
+Package pdftex.def Info: ../files/borden/D11.png  used on input line 45.
+(pdftex.def)             Requested size: 30.11195pt x 30.11195pt.
+<../files/voertuigen/parkauto4_front.png, id=21, 327.3831pt x 297.0297pt>
+File: ../files/voertuigen/parkauto4_front.png Graphic file (type png)
+<use ../files/voertuigen/parkauto4_front.png>
+Package pdftex.def Info: ../files/voertuigen/parkauto4_front.png  used on input
+ line 46.
+(pdftex.def)             Requested size: 121.12984pt x 109.89926pt.
+<../files/voertuigen/parkauto4_top.png, id=22, 321.6015pt x 715.473pt>
+File: ../files/voertuigen/parkauto4_top.png Graphic file (type png)
+<use ../files/voertuigen/parkauto4_top.png>
+Package pdftex.def Info: ../files/voertuigen/parkauto4_top.png  used on input l
+ine 46.
+(pdftex.def)             Requested size: 118.99068pt x 264.72087pt.
+<../files/borden/E9a.png, id=23, 75.28125pt x 111.41624pt>
+File: ../files/borden/E9a.png Graphic file (type png)
+<use ../files/borden/E9a.png>
+Package pdftex.def Info: ../files/borden/E9a.png  used on input line 47.
+(pdftex.def)             Requested size: 18.82025pt x 27.85399pt.
+<../files/voertuigen/fietser1_front.png, id=24, 79.497pt x 260.8947pt>
+File: ../files/voertuigen/fietser1_front.png Graphic file (type png)
+<use ../files/voertuigen/fietser1_front.png>
+Package pdftex.def Info: ../files/voertuigen/fietser1_front.png  used on input 
+line 48.
+(pdftex.def)             Requested size: 29.41342pt x 96.52951pt.
+<../files/voertuigen/fietser1_top.png, id=25, 77.3289pt x 288.3573pt>
+File: ../files/voertuigen/fietser1_top.png Graphic file (type png)
+<use ../files/voertuigen/fietser1_top.png>
+Package pdftex.def Info: ../files/voertuigen/fietser1_top.png  used on input li
+ne 48.
+(pdftex.def)             Requested size: 28.61124pt x 106.69052pt.
+<../files/voertuigen/auto3_front.png, id=26, 314.3745pt x 246.4407pt>
+File: ../files/voertuigen/auto3_front.png Graphic file (type png)
+<use ../files/voertuigen/auto3_front.png>
+Package pdftex.def Info: ../files/voertuigen/auto3_front.png  used on input lin
+e 49.
+(pdftex.def)             Requested size: 116.31673pt x 91.18163pt.
+<../files/voertuigen/auto3_top.png, id=27, 321.6015pt x 761.7258pt>
+File: ../files/voertuigen/auto3_top.png Graphic file (type png)
+<use ../files/voertuigen/auto3_top.png>
+Package pdftex.def Info: ../files/voertuigen/auto3_top.png  used on input line 
+49.
+(pdftex.def)             Requested size: 118.99068pt x 281.83414pt.
+<../files/voertuigen/auto1_back.png, id=28, 291.2481pt x 240.6591pt>
+File: ../files/voertuigen/auto1_back.png Graphic file (type png)
+<use ../files/voertuigen/auto1_back.png>
+Package pdftex.def Info: ../files/voertuigen/auto1_back.png  used on input line
+ 50.
+(pdftex.def)             Requested size: 107.7601pt x 89.04247pt.
+<../files/voertuigen/auto1_top.png, id=29, 311.4837pt x 604.8999pt>
+File: ../files/voertuigen/auto1_top.png Graphic file (type png)
+<use ../files/voertuigen/auto1_top.png>
+Package pdftex.def Info: ../files/voertuigen/auto1_top.png  used on input line 
+50.
+(pdftex.def)             Requested size: 115.24716pt x 223.80945pt.
+<../files/voertuigen/fietser4_back.png, id=30, 94.6737pt x 272.4579pt>
+File: ../files/voertuigen/fietser4_back.png Graphic file (type png)
+<use ../files/voertuigen/fietser4_back.png>
+Package pdftex.def Info: ../files/voertuigen/fietser4_back.png  used on input l
+ine 51.
+(pdftex.def)             Requested size: 35.02872pt x 100.80783pt.
+<../files/voertuigen/fietser4_top.png, id=31, 92.5056pt x 296.307pt>
+File: ../files/voertuigen/fietser4_top.png Graphic file (type png)
+<use ../files/voertuigen/fietser4_top.png>
+Package pdftex.def Info: ../files/voertuigen/fietser4_top.png  used on input li
+ne 51.
+(pdftex.def)             Requested size: 34.22653pt x 109.63187pt.
+<../files/borden/C43_30.png, id=32, 75.28125pt x 75.28125pt>
+File: ../files/borden/C43_30.png Graphic file (type png)
+<use ../files/borden/C43_30.png>
+Package pdftex.def Info: ../files/borden/C43_30.png  used on input line 52.
+(pdftex.def)             Requested size: 30.11195pt x 30.11195pt.
+File: ../files/borden/C43_30.png Graphic file (type png)
+<use ../files/borden/C43_30.png>
+Package pdftex.def Info: ../files/borden/C43_30.png  used on input line 53.
+(pdftex.def)             Requested size: 30.11195pt x 30.11195pt.
+File: ../files/borden/E9a.png Graphic file (type png)
+<use ../files/borden/E9a.png>
+Package pdftex.def Info: ../files/borden/E9a.png  used on input line 55.
+(pdftex.def)             Requested size: 18.82025pt x 27.85399pt.
+<../files/voertuigen/voetganger2_front.png, id=33, 112.7412pt x 299.1978pt>
+File: ../files/voertuigen/voetganger2_front.png Graphic file (type png)
+<use ../files/voertuigen/voetganger2_front.png>
+Package pdftex.def Info: ../files/voertuigen/voetganger2_front.png  used on inp
+ut line 56.
+(pdftex.def)             Requested size: 41.71358pt x 110.70145pt.
+<../files/voertuigen/voetganger2_top.png, id=34, 115.632pt x 134.4222pt>
+File: ../files/voertuigen/voetganger2_top.png Graphic file (type png)
+<use ../files/voertuigen/voetganger2_top.png>
+Package pdftex.def Info: ../files/voertuigen/voetganger2_top.png  used on input
+ line 56.
+(pdftex.def)             Requested size: 42.78316pt x 49.73543pt.
+File: ../files/borden/D11.png Graphic file (type png)
+<use ../files/borden/D11.png>
+Package pdftex.def Info: ../files/borden/D11.png  used on input line 57.
+(pdftex.def)             Requested size: 30.11195pt x 30.11195pt.
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../files/texturen/voetpad.
+pdf> <../files/texturen/voetpad.pdf> <../files/texturen/borduur.pdf> <../files/
+texturen/parkeerstrook.pdf> <../files/texturen/plantenbak.pdf> <../files/textur
+en/plantenbak.pdf> <../files/texturen/parkeerstrook.pdf> <../files/texturen/goo
+t.pdf> <../files/texturen/goot.pdf> <../files/texturen/asfaltweg.pdf> <../files
+/texturen/asfaltweg.pdf> <../files/texturen/asfaltfietspad.pdf> <../files/textu
+ren/asfaltfietspad.pdf> <../files/voertuigen/voetganger7_back.png> <../files/vo
+ertuigen/voetganger7_top.png> <../files/borden/D11.png> <../files/voertuigen/pa
+rkauto4_front.png> <../files/voertuigen/parkauto4_top.png> <../files/borden/E9A
+.png> <../files/voertuigen/fietser1_front.png> <../files/voertuigen/fietser1_to
+p.png> <../files/voertuigen/auto3_front.png> <../files/voertuigen/auto3_top.png
+> <../files/voertuigen/auto1_back.png> <../files/voertuigen/auto1_top.png> <../
+files/voertuigen/fietser4_back.png> <../files/voertuigen/fietser4_top.png> <../
+files/borden/C43_30.png> <../files/voertuigen/voetganger2_front.png> <../files/
+voertuigen/voetganger2_top.png>] (./plan3.aux) ) 
+Here is how much of TeX's memory you used:
+ 15147 strings out of 478287
+ 322153 string characters out of 5849289
+ 655473 words of memory out of 5000000
+ 33093 multiletter control sequences out of 15000+600000
+ 475148 words of font info for 47 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 105i,10n,107p,421b,774s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmssbx10.pfb>
+Output written on plan3.pdf (1 page, 1042180 bytes).
+PDF statistics:
+ 89 PDF objects out of 1000 (max. 8388607)
+ 26 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 163 words of extra memory for PDF output out of 10000 (max. 10000000)
+

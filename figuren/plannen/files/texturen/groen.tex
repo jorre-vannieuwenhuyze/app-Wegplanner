@@ -1,0 +1,38 @@
+\documentclass{article}
+\input{../code.tex} 
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment[{[]}]{tikzpicture}
+
+
+
+
+
+\begin{document}
+
+\def\width{400}
+\def\depth{5000}
+\def\height{40}
+
+\tikzset{groentexture/.pic={
+	\draw[groenlijn] (-2,0) -- (-5,4)  (0,0) -- (0,5) (2,0) -- (5,4);
+	\draw[groenlijn] (8,-10) -- (5,-6)  (10,-10) -- (10,-5) (12,-10) -- (15,-6);
+	}}
+	
+\begin{tikzpicture}	
+\clip[postaction={fill=groen}] (0,0)	rectangle (\width,\depth);
+\foreach \x in {0,20,...,\width}{
+\foreach \y in {0,20,...,\depth}{
+	\path (\x,\y) pic{groentexture};
+	}};		
+\end{tikzpicture}
+
+
+%\begin{tikzpicture}
+%\clip (0,0)	rectangle (\width,\height);
+%\foreach \x in {0,14,...,\width}{ 
+%	\draw[voetpadlijn,fill=voetpad] (\x,0) rectangle +(14,\height);	
+%	}
+%\end{tikzpicture}	
+
+
+\end{document}
